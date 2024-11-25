@@ -1,0 +1,111 @@
+<template>
+  <div class="table-root" role="grid">
+    <div class="box table-wrapper mx-auto">
+      <div class="table-wrapper-in" style={tableWrapperStyle}>
+        <!-- header start -->
+        <div class="header-wrapper">
+          <div role="row" class="header-wrapper-row">
+            <template for:each={headers} for:item="header">
+              <template lwc:if={header.lineNumber}>
+                <div
+                  role="cell"
+                  key={header.id}
+                  colspan="1"
+                  style={header.style}
+                  class="header-cell-1"
+                ></div>
+              </template>
+              <template lwc:else>
+                <div
+                  role="columnheader"
+                  key={header.id}
+                  aria-colspan="1"
+                  colspan="1"
+                  class="header-columnheader"
+                  style={header.style}
+                >
+                  <div class="header-columnheader-in">
+                    <span class="header-columnheader-text">{header.label}</span>
+                    <div class="header-columnheader-dropdown">
+                      <c-dropdown></c-dropdown>
+                    </div>
+                  </div>
+
+                  <div
+                    draggable="false"
+                    role="separator"
+                    data-testid="Title-column-resizer"
+                    class="header-columnheader-resizer"
+                    onmousedown={handleResizeStart}
+                    data-id={header.id}
+                  ></div>
+                </div>
+              </template>
+            </template>
+          </div>
+        </div>
+        <!-- header end -->
+        <!-- Table Data Start -->
+        <div class="data-wrapper">
+          <!-- Table Row Start -->
+          <template for:each={data} for:item="line">
+            <div class="table-row" role="row" key={line.id}>
+              <div
+                class="table-cell"
+                style="width: 5%; min-width: 5%"
+                role="gridcell"
+              >
+                <div class="table-cell-styler-0" draggable="true">
+                  <div class="table-cell-text">
+                    <span class="table-cell-text-span">{line.id}</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="table-cell"
+                style={line.label.meta.style}
+                role="gridcell"
+              >
+                <div class="table-cell-styler-0" draggable="true">
+                  <div class="table-cell-text">
+                    <span class="table-cell-text-span">
+                      {line.label.value}</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="table-cell"
+                style={line.assignees.meta.style}
+                role="gridcell"
+              >
+                <div class="table-cell-styler-0" draggable="true">
+                  <div class="table-cell-text">
+                    <span class="table-cell-text-span">
+                      {line.assignees.value}</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="table-cell"
+                style={line.status.meta.style}
+                role="gridcell"
+              >
+                <div class="table-cell-styler-0" draggable="true">
+                  <div class="table-cell-text">
+                    <span class="table-cell-text-span">
+                      {line.status.value}</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+          <!-- Table Row End -->
+          <!-- Table Data End -->
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

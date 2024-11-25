@@ -1,0 +1,233 @@
+/* body {
+  font-family: sans-serif;
+} */
+.table-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  user-select: none;
+  scroll-behavior: smooth;
+  width: 100%;
+  /* position: absolute; */
+}
+
+.table-wrapper-in {
+  user-select: none;
+  position: relative;
+  /* width: fit-content; */
+  /* can set width accordingly */
+  /* width: 1160px; */
+  padding-bottom: 69px;
+  /* color: beige; */
+}
+
+.table-root {
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  background-color: var(
+    --bgColor-default,
+    var(--color-canvas-default, #ffffff)
+  );
+  display: flex;
+  background-color: #ffffff;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0px;
+  z-index: 4;
+  background-color: #ffffff;
+  height: 34px;
+  /* width: fit-content; */
+  /* can set width accordingly */
+  /* min-width: 1160px; */
+  box-shadow:
+    inset 0 -2px 0 var(--borderColor-default, var(--color-border-default, #d0d7de)),
+    inset 0 1px 0
+      var(--borderColor-default, var(--color-border-default, #d0d7de));
+}
+
+.header-wrapper-row {
+  display: flex;
+  width: 100%;
+}
+.header-columnheader {
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  /* Set width and min width inline for each header cell */
+  /* width: 650px;
+  min-width: 650px; */
+  height: 34px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: grab;
+  user-select: none;
+  white-space: nowrap;
+  border-style: solid;
+  border-left-color: rgb(209, 217, 224);
+  border-right: none;
+  border-top: none;
+  border-bottom: 0px;
+  outline: none;
+  border-width: 1px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-columnheader:last-child {
+  border-right: 1px solid rgb(209, 217, 224);
+}
+
+.header-columnheader-resizer {
+  cursor: col-resize;
+  padding-left: 8px;
+  right: -8px;
+  top: 0px;
+  bottom: 0px;
+  width: 16px;
+  box-sizing: border-box;
+  z-index: 1;
+  position: absolute;
+}
+.header-wrapper-row > div:nth-child(2) {
+  border-left: none;
+}
+.header-columnheader-text {
+  color: #656d76;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+  --webkit-box-flex: 1;
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: grab;
+  user-select: none;
+  /* border-left-color: ; */
+  white-space: nowrap;
+}
+.header-columnheader-in {
+  -webkit-box-align: center;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 8px 12px;
+  overflow: hidden;
+  display: flex;
+  box-shadow:
+    inset 0 -2px 0 var(--borderColor-default, var(--color-border-default, #d0d7de)),
+    inset 0 1px 0
+      var(--borderColor-default, var(--color-border-default, #d0d7de));
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  height: 34px;
+}
+.header-cell-1 {
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  height: 34px;
+  border-left: 1px solid rgb(209, 217, 224);
+}
+
+.table-row {
+  height: 37px;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+}
+
+.table-cell {
+  display: inline-block;
+  box-sizing: border-box;
+  /* set dynamically*/
+  /* width: 60px;
+  min-width: 60px; */
+  overflow-x: visible;
+  white-space: nowrap;
+  scroll-margin-top: 35px;
+  scroll-margin-bottom: 64px;
+  border-bottom: 1px solid #d1d9e0b3;
+  border-left: 1px solid #d1d9e0b3;
+}
+
+/* .table-cell:first-of-type {
+  border-left: 0px;
+} */
+
+.table-cell.draggable {
+  cursor: grab;
+  user-select: none;
+}
+
+.table-cell-styler-0 {
+  box-sizing: border-box;
+  position: relative;
+  overflow: visible;
+  user-select: none;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  padding: 12px 4px 12px 12px;
+  height: 37px;
+}
+.table-cell-text {
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: var(--fgColor-muted, var(--color-fg-muted, #656d76));
+  /* padding-left: 16px; */
+}
+.table-cell:nth-of-type(2) {
+  border-left: 0px;
+}
+
+.table-cell:last-child {
+  border-right: 1px solid #d1d9e0b3;
+}
+.table-cell-text-span {
+  text-align: left;
+  white-space: nowrap;
+  min-width: 0px;
+  overflow: hidden;
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+.table-cell-icon {
+  flex-shrink: 0;
+  margin-right: 8px;
+  display: flex;
+}
+
+.table-cell-icon svg {
+  display: inline-block;
+  user-select: none;
+  vertical-align: text-bottom;
+  overflow: visible;
+  color: var(--fgColor-done, var(--color-done-fg, #8250df));
+}
+.table-row:hover {
+  background-color: #f6f8fa;
+}
+
+.header-columnheader-dropdown {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 0px;
+}

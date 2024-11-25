@@ -1,0 +1,264 @@
+<template>
+  <div>
+    <button class="dropdown-btn" onclick={dropdownToggle}>
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="octicon octicon-kebab-horizontal"
+        viewBox="0 0 16 16"
+        width="16"
+        height="16"
+        fill="currentColor"
+        style="
+          display: inline-block;
+          user-select: none;
+          vertical-align: text-bottom;
+          overflow: visible;
+        "
+      >
+        <path
+          d="M8 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm13 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
+        ></path>
+      </svg>
+    </button>
+    <div>
+      <div
+        height="auto"
+        width="auto"
+        role="none"
+        class={dropdownClass}
+        data-testid="Title-column-menu"
+        data-focus-trap="active"
+        style="--styled-overlay-visibility: visible"
+      >
+        <span class="sentinel" tabindex="0" aria-hidden="true"></span>
+        <div>
+          <ul
+            role="menu"
+            aria-labelledby=":rab:"
+            class="List__ListBox-sc-1x7olzq-0 gAwGiF"
+          >
+            <li
+              tabindex="0"
+              aria-labelledby=":riu:--label  "
+              role="menuitem"
+              id=":riu:"
+              class="Item__LiBox-sc-yeql7o-0 UDyBn"
+              aria-keyshortcuts="s"
+            >
+              <span class="Box-sc-g0xbh4-0 eDCWKW"
+                ><svg
+                  aria-hidden="true"
+                  focusable="false"
+                  class="octicon octicon-multi-select"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  style="
+                    display: inline-block;
+                    user-select: none;
+                    vertical-align: text-bottom;
+                    overflow: visible;
+                  "
+                >
+                  <path
+                    d="M5.75 7.5h7.5a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1 0-1.5Zm0 5h7.5a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1 0-1.5Zm-4-10h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1 0-1.5ZM2 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-6a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10.314-3.082L11.07 2.417A.25.25 0 0 1 11.256 2h4.488a.25.25 0 0 1 .186.417l-2.244 2.5a.25.25 0 0 1-.372 0Z"
+                  ></path></svg
+              ></span>
+              <div
+                data-component="ActionList.Item--DividerContainer"
+                class="Box-sc-g0xbh4-0 fFwzwX"
+              >
+                <span id=":riu:--label" class="Box-sc-g0xbh4-0 hczSex"
+                  >Select column</span
+                >
+              </div>
+            </li>
+            <li
+              aria-hidden="true"
+              data-component="ActionList.Divider"
+              class="Box-sc-g0xbh4-0 dAyDss"
+            ></li>
+            <li
+              tabindex="-1"
+              aria-labelledby=":riv:--label :riv:--trailing-visual "
+              aria-describedby="sort-description-asc-Title"
+              role="menuitem"
+              id=":riv:"
+              data-testid="sort-toggle-asc-Title"
+              class="Item__LiBox-sc-yeql7o-0 dpppTU"
+              aria-keyshortcuts="s"
+            >
+              <span class="Box-sc-g0xbh4-0 eDCWKW"
+                ><svg
+                  aria-hidden="true"
+                  focusable="false"
+                  class="octicon octicon-sort-asc"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  style="
+                    display: inline-block;
+                    user-select: none;
+                    vertical-align: text-bottom;
+                    overflow: visible;
+                  "
+                >
+                  <path
+                    d="m12.927 2.573 3 3A.25.25 0 0 1 15.75 6H13.5v6.75a.75.75 0 0 1-1.5 0V6H9.75a.25.25 0 0 1-.177-.427l3-3a.25.25 0 0 1 .354 0ZM0 12.25a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1-.75-.75Zm0-4a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8.25Zm0-4a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 4.25Z"
+                  ></path></svg
+              ></span>
+              <div
+                data-component="ActionList.Item--DividerContainer"
+                class="Box-sc-g0xbh4-0 fFwzwX"
+              >
+                <div class="Box-sc-g0xbh4-0 cAMcRf">
+                  <span id=":riv:--label" class="Box-sc-g0xbh4-0 hczSex"
+                    ><span>Sort ascending</span></span
+                  ><span
+                    id=":riv:--trailing-visual"
+                    class="Box-sc-g0xbh4-0 dtMwwS"
+                  ></span>
+                </div>
+              </div>
+            </li>
+            <span id="sort-description-asc-Title" class="sr-only"
+              >Ascending order: A to Z</span
+            >
+            <li
+              tabindex="-1"
+              aria-labelledby=":rj0:--label :rj0:--trailing-visual "
+              aria-describedby="sort-description-desc-Title"
+              role="menuitem"
+              id=":rj0:"
+              data-testid="sort-toggle-desc-Title"
+              class="Item__LiBox-sc-yeql7o-0 dpppTU"
+              aria-keyshortcuts="s"
+            >
+              <span class="Box-sc-g0xbh4-0 eDCWKW"
+                ><svg
+                  aria-hidden="true"
+                  focusable="false"
+                  class="octicon octicon-sort-desc"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  style="
+                    display: inline-block;
+                    user-select: none;
+                    vertical-align: text-bottom;
+                    overflow: visible;
+                  "
+                >
+                  <path
+                    d="M0 4.25a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 4.25Zm0 4a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8.25Zm0 4a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1-.75-.75ZM13.5 10h2.25a.25.25 0 0 1 .177.427l-3 3a.25.25 0 0 1-.354 0l-3-3A.25.25 0 0 1 9.75 10H12V3.75a.75.75 0 0 1 1.5 0V10Z"
+                  ></path></svg
+              ></span>
+              <div
+                data-component="ActionList.Item--DividerContainer"
+                class="Box-sc-g0xbh4-0 fFwzwX"
+              >
+                <div class="Box-sc-g0xbh4-0 cAMcRf">
+                  <span id=":rj0:--label" class="Box-sc-g0xbh4-0 hczSex"
+                    ><span>Sort descending</span></span
+                  ><span
+                    id=":rj0:--trailing-visual"
+                    class="Box-sc-g0xbh4-0 dtMwwS"
+                  ></span>
+                </div>
+              </div>
+            </li>
+            <span id="sort-description-desc-Title" class="sr-only"
+              >Descending order: Z to A</span
+            >
+            <li
+              aria-hidden="true"
+              data-component="ActionList.Divider"
+              class="Box-sc-g0xbh4-0 dAyDss"
+            ></li>
+            <li
+              tabindex="-1"
+              aria-labelledby=":rj1:--label  "
+              role="menuitem"
+              id=":rj1:"
+              data-testid="create-filter-trigger"
+              class="Item__LiBox-sc-yeql7o-0 UDyBn"
+              aria-keyshortcuts="f"
+            >
+              <span class="Box-sc-g0xbh4-0 eDCWKW"
+                ><svg
+                  aria-hidden="true"
+                  focusable="false"
+                  class="octicon octicon-filter"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  style="
+                    display: inline-block;
+                    user-select: none;
+                    vertical-align: text-bottom;
+                    overflow: visible;
+                  "
+                >
+                  <path
+                    d="M.75 3h14.5a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1 0-1.5ZM3 7.75A.75.75 0 0 1 3.75 7h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 3 7.75Zm3 4a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"
+                  ></path></svg
+              ></span>
+              <div
+                data-component="ActionList.Item--DividerContainer"
+                class="Box-sc-g0xbh4-0 fFwzwX"
+              >
+                <span id=":rj1:--label" class="Box-sc-g0xbh4-0 hczSex"
+                  >Filter by values…</span
+                >
+              </div>
+            </li>
+            <li
+              tabindex="-1"
+              aria-labelledby=":rj2:--label  "
+              role="menuitem"
+              id=":rj2:"
+              data-testid="create-is-filter-trigger"
+              class="Item__LiBox-sc-yeql7o-0 UDyBn"
+              aria-keyshortcuts="f"
+            >
+              <span class="Box-sc-g0xbh4-0 eDCWKW"
+                ><svg
+                  aria-hidden="true"
+                  focusable="false"
+                  class="octicon octicon-filter"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  style="
+                    display: inline-block;
+                    user-select: none;
+                    vertical-align: text-bottom;
+                    overflow: visible;
+                  "
+                >
+                  <path
+                    d="M.75 3h14.5a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1 0-1.5ZM3 7.75A.75.75 0 0 1 3.75 7h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 3 7.75Zm3 4a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"
+                  ></path></svg
+              ></span>
+              <div
+                data-component="ActionList.Item--DividerContainer"
+                class="Box-sc-g0xbh4-0 fFwzwX"
+              >
+                <span id=":rj2:--label" class="Box-sc-g0xbh4-0 hczSex"
+                  >Filter by type or state…</span
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+        <span class="sentinel" tabindex="0" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+</template>
